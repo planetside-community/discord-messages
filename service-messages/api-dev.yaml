@@ -1,12 +1,38 @@
 channelID: "451032574538547201"
 messages:
   - text: |-
-      <:iso4:489438725093195786>  Welcome to <#451032574538547201>! This channel is for discussion of and help with development for Daybreak's census API. You can find documentation for the census API here: http://census.daybreakgames.com/
+      <:iso4:489438725093195786>  Welcome to <#451032574538547201>! This channel is for discussion of and help with development for Daybreak's census API. You can find documentation for the census API here: <http://census.daybreakgames.com/>
 
       This channel is exclusively for discussion of PS2 census API development. Remember that linking to or providing unofficial tools or instructions for reading or writing the game's assets is not permitted on this discord. Please keep discussions on-topic in this channel.
+      <:blank:532257047434100736>
+      <:blank:532257047434100736>
+      Many projects (PS2Alerts, Fisu, Honu, Voidwell, etc.) can also be found on the PlanetSide 2 Community Developers Discord: https://discord.gg/yVzGEg3RKV
     pin: true
   - text: |-
-      <:blank:532257047434100736>
+      ```fix
+      Community Links
+      ```
+
+      **API-Tracker** : *A collection of shared API resources, and API issues compiled by the community.*
+      <https://github.com/cooltrain7/Planetside-2-API-Tracker>
+
+      **Census-API-Primer** : *Rewritten and updated documention on the census API by Leonhard*
+      <https://github.com/leonhard-s/auraxium/wiki/Census-API-Primer>
+
+      **Census API Reference** : *Another census collections documentation source by Leonhard*
+      <https://ps2-api-docs.readthedocs.io/en/latest/openapi.html>
+
+      **Census Query GUI** : *A graphical wrapper for querying the census by Chirtle*
+      <https://eating-coleslaw.github.io/ps2-visual-query/>
+
+      **DBG API Email** : *Found an issue with the streaming or census api? Contact DBG via the following email (Don't abuse this...)*
+      `data-feedback@daybreakgames.com`
+
+      **Zone ID Guide** : *An excellent guide into Zone IDS inside the census by Pocok*
+      <https://github.com/cooltrain7/Planetside-2-API-Tracker/wiki/Tutorial:-Zone-IDs>
+
+      **Your Link Here** : *Created a resource or tool that others might find useful? Want your link included here? Create an issue or open a pull request with the changes.*
+      <https://github.com/genudine/ps2-discord/blob/main/service-messages/api-dev.yaml>
   - text: |-
       <:blank:532257047434100736>
   - text: |-
