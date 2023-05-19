@@ -1,0 +1,21 @@
+channelID: "1108919399366262934"
+messages:
+  - text: |-
+      This is a strictly moderated channel for reporting Planetside 2 bugs to Daybreak. 
+      *Use this channel only for actual bug reports. Use <#251101848730075137> to discuss posted bugs.*
+      If you post things in here other than bug reports, we may revoke your access to this channel.
+
+      **When submitting a bug report:**
+      1) Be as specific and detailed as possible.
+      2) Provide detailed steps to reproduce the problem. Imagine that you had to take these instructions and make the bug happen again on your machine.
+
+      For errors in the terrain or in bases, use the /loc command to get exact coordinates for where the issue is.
+
+      This channel is not for reporting other players for doing things -- cheating, exploiting, whatever. Use the in-game report function or email `cheater@planetside2.com` for that. If you're reporting an issue that shouldn't be made public, such as reproduction steps for an exploit, use `cheater@planetside2.com` for that as well.
+    pin: true
+  - text: |-
+      <:blank:532257047434100736>
+  - text: |-
+      <:blank:532257047434100736>
+  - text: |-
+      <:blank:532257047434100736>

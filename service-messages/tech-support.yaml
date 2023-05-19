@@ -1,0 +1,21 @@
+channelID: "1108919399366262934"
+messages:
+  - text: |-
+      <:iso4:489438725093195786>  Welcome to <#1057779422054338632>! 
+
+      Use this channel to ask the community for help fixing game issues or relevant problems you have with your setup. Keep in mind that this is a community support channel -- the admins, moderators, and mentors of this server do not work for Daybreak/Rogue Planet and can't offer official technical guidance or help with your game account. If you need help with your account, use https://help.daybreakgames.com/ instead.
+
+      **This is not a channel for reporting cheaters. If you have evidence of a cheater in-game, email `cheater@planetside2.com`.**
+
+      ```diff
+      - -------------------------------------------------------------------- -
+      - NEVER GIVE YOUR ACCOUNT USERNAME OR PASSWORD TO SOMEONE OVER DISCORD -
+      - -------------------------------------------------------------------- -
+      ```
+    pin: true
+  - text: |-
+      <:blank:532257047434100736>
+  - text: |-
+      <:blank:532257047434100736>
+  - text: |-
+      <:blank:532257047434100736>

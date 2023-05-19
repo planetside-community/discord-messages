@@ -1,0 +1,32 @@
+{
+  "name": "ps2-discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "service-messages.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genudine/ps2-discord.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/genudine/ps2-discord/issues"
+  },
+  "homepage": "https://github.com/genudine/ps2-discord#readme",
+  "dependencies": {
+    "@types/yaml": "^1.9.7",
+    "dotenv": "^16.0.3",
+    "glob": "^10.2.5",
+    "node-fetch": "^3.3.1",
+    "yaml": "^2.2.2"
+  },
+  "devDependencies": {
+    "bun-types": "^0.5.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
