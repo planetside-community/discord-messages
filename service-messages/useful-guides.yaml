@@ -1,11 +1,9 @@
 channelID: "469528074560602120"
 messages:
   - text: |-
-      ```fix
-      General Gameplay/Getting Started
-      ```
+      # General Gameplay/Getting Started
 
-      🔶 **Planetside 2 Quick Start Guide:** 🔶
+      ## **Planetside 2 Quick Start Guide:** 🔶
       <https://web.archive.org/web/20190604174748/http://iridar.net/planetside2/beginner-guides/starter-guide/>
 
 
@@ -27,9 +25,9 @@ messages:
       <:blank:532257047434100736>
       <:blank:532257047434100736>
   - text: |-
-      ```Infantry-Specific Information```
+      # Infantry-Specific Information
 
-      🔶 **Recommended Loadouts for Infantry vs. Infantry:** 🔶
+      ## **Recommended Loadouts for Infantry vs. Infantry:** 🔶
       <https://redd.it/fe713k>
 
 
@@ -64,7 +62,7 @@ messages:
       <:blank:532257047434100736>
       <:blank:532257047434100736>
   - text: |-
-      ```Air and Piloting```
+      # Air and Piloting
       ESF Weapon and Cert Guide
       <https://docs.google.com/document/d/1PEaFzoRxmyZQmQbxWoKn3sG40hT77hP5kd3mnZLmzMw>
 
@@ -103,7 +101,7 @@ messages:
       <:blank:532257047434100736>
       <:blank:532257047434100736>
   - text: |-
-      ```Ground Vehicles```
+      # Ground Vehicles
       Armorpedia (outdated reddit wiki):
       <https://www.reddit.com/r/planetsidearmor/wiki/armorpedia>
 
@@ -114,7 +112,7 @@ messages:
       <:blank:532257047434100736>
       <:blank:532257047434100736>
   - text: |-
-      ```Stats/API Pages```
+      # Stats/API Pages
       fisu:
       <http://ps2.fisu.pw>
 
@@ -132,7 +130,7 @@ messages:
       <:blank:532257047434100736>
       <:blank:532257047434100736>
   - text: |-
-      ```Tools and Utilities```
+      # Tools and Utilities
       Recursion Stat Tracker:
       <https://recursiontracker.com/>
 

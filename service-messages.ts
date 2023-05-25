@@ -56,7 +56,7 @@ try {
     let knownMessageIDs = state.m[key].k;
 
     for (const [idx, message] of data.messages.entries()) {
-      await sleep(1000);
+      await sleep(2000);
 
       if (knownMessageIDs[idx]?.i) {
         const messageID = knownMessageIDs[idx].i;
