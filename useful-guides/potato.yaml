@@ -1,0 +1,77 @@
+title: '"Potato" UserOptions.ini Settings (and why you need it)'
+content: |-
+  *Last updated: 17 Nov 2022*
+
+  Your PlanetSide 2 install directory contains a `UserOptions.ini` file for your settings. You can set values in there that aren't accessible from the UI in-game. 
+
+  With some minor tweaks these are generally the recommended rendering settings for maximum FPS playing infantry. Copy and paste them to replace the values for the [Rendering] category. 
+
+  You may also want to set the file to read-only to prevent the game from overwriting these options.
+
+  ## Always save a backup copy of this file before making manual changes.
+
+  ```ini
+  [Rendering]
+  OverallQuality=-1
+  GraphicsQuality=1
+  TextureQuality=0
+  ShadowQuality=0
+  LightingQuality=1
+  EffectsQuality=1
+  TerrainQuality=1
+  FloraQuality=4
+  ModelQuality=3
+  Gamma=0.550000
+  VerticalFOV=80
+  ParticleLOD=0
+  ParticleDistanceScale=0.650000
+  FogShadowsEnable=0
+  MotionBlur=0
+  VSync=0
+  AO=0
+  MaximumFPS=250
+  UseLod0a=0
+  BloomEnabled=0
+  Smoothing=0
+  SmoothingMaxFramerate=150
+  SmoothingMinFramerate=60
+  UseAspectFOV=0
+  UseGlobalRenderDistance=0
+  RenderDistance=150.000000
+  InfantryRenderDistance=150.000000
+  GroundVehicleRenderDistance=800.000000
+  AirVehicleRenderDistance=1000.000000
+  UnderwaterGodRaysQuality=1
+  AAQuality=-1
+  SSLRQuality=0
+  Tessellation=0
+  WaterQuality=0
+  ```
+
+  You may want to play with the texture settings (try both Low and Ultra to see which gives you better frames, depends on your machine). It also reduces your render distance to 200m, so you might want to adjust that back up for flying or vehicles.
+comments:
+  - |-
+    # Why do you need this?
+
+    ## Mouse sensitivity is tied to framerate.
+
+    Having your FPS below 100 and in-game sensitivity below 0.1 will cause your mouse to be inaccurate. This is a known issue with the game engine.
+
+    One player (u/JHFO) measured a 20% change, with 800 dpi and 0.058 in-game sensitivity:
+    - 100 FPS resulted in a **44.3cm per 360**
+    - 60 FPS resulted in a **55cm per 360**
+
+    If this affects you, and the above settings don't help, use 400dpi and base your in-game sensitivity from that instead. The engine handles this better, for whatever reason.
+
+    ## Gun fire rate is tied to framerate.
+
+    If you have a low framerate, your gun will fire slower. This is also a known issue with the game engine.
+
+    These two videos by Ahorn show the phenomenon in action:
+    https://www.youtube.com/watch?v=jAJ85uyxhSI
+    https://www.youtube.com/watch?v=5JDZHkY0Ksw
+  - |-
+    # What do these settings do?
+
+    (Not updated recently, but still accurate)
+    <https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSnt8_M-I9KByf3o8S8uFJr1eA6YQlnnscTOpZIjIl6gjC6w8K7q7YEV4FI3DuVfNIII_15P1CsM3kY/pubhtml>

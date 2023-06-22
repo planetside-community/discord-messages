@@ -32,7 +32,10 @@ state = {
   ...state,
 };
 
-const messageFiles = await glob("service-messages/**/*.yaml");
+const messageFiles = process.argv[2]
+  ? [process.argv[2]]
+  : await glob("service-messages/**/*.yaml");
+
 try {
   for (const messageFile of messageFiles) {
     const key =

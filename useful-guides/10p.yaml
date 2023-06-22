@@ -1,0 +1,26 @@
+title: Ten Points of Advice for Infantry
+content: |-
+  Off the top of my head, the things that made the biggest difference for me:
+comments:
+  - |-
+    1. Make sure you're getting a decent framerate. Pretty graphics and high resolutions are a conspiracy designed by the Illuminati to steal your FPS. Higher FPS also helps with wallclimbing, which is a huge part of positioning in the game. I recommend these settings in your useroptions.ini file: <#1121285177453318235>
+
+    2. Adjust your mouse sensitivity so you can smoothly snap to and track on heads. For 99% of people this means turning it down, but there's no magic cm/360 that works for everyone. Disable mouse acceleration at the hardware level, Windows level, and PS2 level. Find an FOV that works for you: lower FOV means heads are bigger, higher FOV means more peripheral vision and less recoil. LeeHarvy's guide (which I've updated a bit) is long but does a deep dive on aiming in Planetside 2. This is a long read and I only recommend it if you have spare time/dedication.
+
+    3. At least to begin with, find fights of a manageable size where you have noticeable underpop. Don't use this as an excuse to crutch on tower defenses though; you'll never improve if you don't challenge yourself. Play at most with a small squad of a handful of people. Anything larger than 6 people is for shooting at, not zergsurfing with.
+
+    4. Seek video footage from the best players out there (<#1121294115766796288>) and figure out why they make the micro-decisions they do. Videos won't help much with aiming (beyond burst control) but they can help with positioning and decision-making. Pay attention to the minimap and figure out why the person you're watching moves the way they do. Try to pause the video periodically and predict what the person is going to do next with the information they have available to them. What would you do in that situation? Which of those three targets would you shoot at first? Why?
+  - |-
+    5. Do some 1v1s, scrims, public pickups, or open league to work on your aim and tracking, especially when trying to figure out what mouse sensitivity you're comfortable with. Even shooting people running around VR or the warpgate works. Try this spot in VR for practice (<https://www.youtube.com/watch?v=doP2WreHoqc&t=4m>). See how fast you can snap between heads and reliably chain headshots on the VR training dummies. Find burst/microburst patterns for your favorite guns that you're comfortable with and drill them into muscle memory.
+
+    6. Learn about crosshair placement when moving around, rounding corners, and checking doors. Many other games carry this over as well, especially Counter Strike (<https://www.youtube.com/watch?v=hofi53u5_iw>), so resources from those games are probably better and help all the same. In general, keep your crosshair in the spot where you'll have to move it the least to get to the head of whoever's around that corner when you peek.
+
+    7. Record your own video footage and critique it yourself, or upload 10-20 minutes of average gameplay for good players to critique. By good players I don't mean just uploading it to /r/planetside or Discord for everyone to give terrible feedback on. I always run Shadowplay and usually if I get a bad trade I'll save a clip to see what I did wrong. This Discord server has designated infantry mentors (orange names) who are verified-good players and are willing to help critique gameplay footage.
+  - |-
+    8. Track your sessions with Recursion RTST, especially your weapon accuracy and HSR. Shoot for an ACC/HSR of 30/30 in each session to begin with. Try to identify how you did in a session and why, and if you were aiming too high (higher HSR, lower ACC) or too low (higher ACC, lower HSR) in general. Get a fun voice pack that you enjoy listening to. Also consider using a custom crosshair overlay for the obvious ~~CHEATING~~ (<https://www.youtube.com/watch?v=i2EAB1B_-uc>) utility it provides.
+
+    9. Don't shoot what you can't kill. Shooting at far-away targets is dumb. The TTK is long enough and health/shield regen is so fast that you aren't going to kill far away things consistently. Anybody with sense will shuffle into cover, heal, and carry on as if nothing happened. Meanwhile you've just wasted ammo and told everyone in the hex where you are. Worthwhile fights in the game happen at 30-40m or less, and there's little reason to shoot beyond that. If you aren't very confident you'll kill someone, move somewhere better before shooting.
+
+    10. Play with the right mindset. If you're stressed, frustrated, or burned out, take a break from the game or do something relaxing like A2G or pulling a MAX. At the end of the day there are no consequences to being worse than someone else in a terribly optimized and haphazardly balanced F2P shooter with clientside hit detection, no ping limits, and no hope of ever being considered "competitive". You have no budding pro career on the line and getting better at the game is only valuable if it serves you.
+
+    Additionally, check out <#1121293870781706261>
