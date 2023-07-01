@@ -1,0 +1,51 @@
+name: Sync Discord Messages
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "state/**"
+
+jobs:
+  sync_staging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - run: |
+          bun install
+      - run: |
+          bun run useful-guides.ts
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          ENVIRONMENT: staging
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add state/staging
+          git diff --quiet && git diff --staged --quiet || git commit -m "[ci] sync staging state"
+          git push
+
+  # sync_production:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: oven-sh/setup-bun@v1
+  #       with:
+  #         bun-version: latest
+  #     - run: |
+  #         bun install
+  #     - run: |
+  #         bun run useful-guides.ts
+  #       env:
+  #         DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+  #         ENVIRONMENT: production
+  #     - run: |
+  #         git config user.name github-actions
+  #         git config user.email
+  #         git add state/staging
+  #         git diff --quiet && git diff --staged --quiet || git commit -m "[ci] sync production state"
+  #         git push
