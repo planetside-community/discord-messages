@@ -1,0 +1,186 @@
+start_guide: true
+title: "[PC] New Player? Start Here! (WIP)"
+content: |-
+  > *This guide is a work-in-progress. Some stuff may be missing, worded incorrectly, or outright wrong. It can currently guide you through the initial steps, but doesn't cover everything in depth, yet.*
+
+  # New to PlanetSide 2? Don't know what to do?
+
+  Let's fix that.
+
+  If you're a PlayStation user... since everything is different-looking on PlayStation, check out <link missing> instead!
+  This guide may still be useful to you (especially from <link missing> onward), but take note of the significant differences.
+comments:
+  - |-
+    # 1. Pick a Faction
+
+    As a new player, you have the option of playing for the NC, TR, or VS. It doesn't matter which one you pick, as you can play on all three (and later, the 4th faction NSO, too!)
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-001.png
+  - |-
+    # 2. Choose a name and character
+
+    This is where you can pick your body type and face/skin tone.
+
+    **Note:** Don't tick "Skip Tutorial" unless you really want to! There's good information about how the game works in there. You can skip it or try it later too.
+
+    Later on, you can further customize your character with cosmetic armor, helmets, camos, and decals. We'll show you how later in the guide!
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-002.png
+  - |-
+    # 3. Pick a Server
+
+    You should select the server with the lowest ping to you. This makes sure you'll be playing during that server's "prime time", and this game is very latency-sensitive!
+
+    Ignore the "Server Population" graph, as it's showing the _currently online_ population, not the overall population.
+
+    > :flag_eu: For players with low ping to EU, your choice between Miller and Cobalt isn't permanent, and you can create another character to try the other server. 
+
+    Some servers may be hidden, click "Show all servers" to see them all. Apex, Jaeger, and Briggs aren't available to anyone, but still appear in the list.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-003.png
+  - |-
+    # 4. (optional) Complete the tutorial
+
+    You'll soon be entered into a simulated battlefield, keep an eye on your "active missions", as they'll let you know where to go and what to do.
+
+    This tutorial will know you almost everything you need to know to get started, from spotting enemies, to changing classes and equipment, finding your way around a base, pulling and repairing vehicles, and so on.
+
+    Completing the tutorial awards you with **1000 Certs :cert:**, which you'll use to unlock weapons, attachments, and abilities later.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-004.png
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-005.png
+  - |-
+    If you'd like to quit the tutorial at any time, 
+    1. Press `Esc`
+    2. find the "Exit Tutorial" button in the bottom right, and click it
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-006.png
+  - |-
+    # 5. Your first (real) battle
+
+    Let's get you into the fight!
+
+    ## World Map & Continents
+
+    At the end of the tutorial (or if you skipped it), you're awoken on Sancutary. There's no fighting here, so find a terminal like this, and press `E` (or your action key)
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-007.png
+  - |-
+    Here, you'll find the continent selection screen.
+
+    PlanetSide 2 is split up into 5 warzones, or "continents". Indar, Hossin, Amerish, Esamir, and Oshur.
+
+    On the screen below, note the tiny :lock: icons next to some of the selections, these are "locked" to specific factions that captured them earlier. pick one that isn't locked, and click the big :green_square: **WARP** button.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-008.png
+  - |-
+    ## Warpgates & Flotillas
+
+    You likely made it to a **Warpgate**, or a **Flotilla** if on Oshur. This is the foothold each faction has on a continent. These can't be captured, and are a no-damage zone for players. Others can't shoot in, and you won't be damaged by friendlies.
+
+    All vehicles and aircraft can be spawned from here, which might not be the case elsewhere on the map.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-009.png
+  - |-
+    Press `M` to bring up the map.
+
+    ## The Map
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-010.png
+  - |-
+    Auraxis and her continents are extremely big, and you'll want to get familiar with the map in order to move around from fight to fight. It's your best friend.
+
+    The map is split up into many **Regions**, each containing capturable **bases** of various types, sizes, and layouts.
+
+    Each region is connected by **Lattices**, which dictate what factions may capture regions or spawn there. As long as a lattice is connected to the **Warpgate**, players may freely spawn there.
+
+    Regions can be captured by factiond while regions are connected to an enemy faction. If a region is cut off from the warpgate, it cannot be captured.
+
+    ### Capturing Regions/Bases
+
+    There's two types of base capture types, **Capture Points** and **Conduits**.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-011.png
+  - |-
+    This is a catpure point. You can tell by the way it is. -- It's got a [A] marker on it, and while standing near it, you'll see the capture status at the top middle of the screen.
+
+    Capture the point, and let the timer run out, and the base will flip to your faction's control. Timers can vary from different factors, so keep an eye on your map to stay updated.
+
+    Some bases have more than one capture point, and some can be captured while in a vehicle.
+
+    You cannot capture the base if the enemy is also within the vicinity of the capture point, and you'll need to dispose of them!
+
+    This is similar to a "conquest" or "domination" game mode in other games.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-012.png
+  - |-
+    This is a conduit. It has a flag marker on it, and upon picking it up, you'll need to carry it to the marked location. Careful though, everyone on the map knows where you are while you're holding the conduit.
+
+    Capture the number of conduits required to capture the base, and it will flip to your faction's control.
+
+    This is similar to a "capture the flag" game mode in other games.
+  - |-
+    ### The Lattice System & Map Details
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-013.png
+  - |-
+    In this case, we see the <:tr:441405413745754112> TR fighting the <:vs:441405448113881098> VS at their border near Ixtab Amp Station and Bravata PMC Compound.
+
+    Focusing on Bravata PMC Compound, the TR are currently capturing the base, with 3 minutes and 27 seconds left until they capture it. While the timer is active, nearby bases cannot be captured, unless they have another link around it.
+
+    The VS could attempt capturing Ixtab Amp Station, since they have a connection at Ixtab Water Purification; however, couldn't capture Eastern Substation until they've dealt with the TR at Bravata PMC Compound. 
+
+    The VS couldn't capture Ixtab Southern Pass or Genesis Terraforming either, since there is no connection from their territory.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-014.png
+  - |-
+    Hurakan Secure Storage is a conduit capture or capture-the-flag base. It has a square icon, and shows how many flags (`[1/6]`) need to be captured before the base is captured.
+
+    ## Join Combat & Redeploy
+
+    Enough of the map :smile: 
+
+    Let's jump into a fight!
+
+    **Join Combat** will take you to a fight. It might not always be a good fight or even a real fight, so use it if you're not sure where to go.
+
+    **Redeploy** will let you respawn anywhere you like. You may select it from the map screen or press `U` any time. If the battle is over, this is a good next step.
+
+    In both cases, you'll get a 10 second timer, and you'll be off!
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-015.png
+  - |-
+    ## You died (or redeployed)!
+
+    That's the spirit. Get used to it, dying in this game is as abundant as bullets. It's fine, you'll get better.
+
+    The map screen while you aren't spawned looks a little different, you'll see some "green dots" or "weird rectangles" that are spawn points.
+
+    You might want to stay fighting the enemies, so pick a spawn close to where you died! Alternatively, you can spawn anywhere else to pull a vehicle or attack/defend another front.
+
+    You can double click any that you'd like, or pick it along the list of spawn locations on the top left.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-016.png
+  - |-
+    To know what sorts of "amenities" or **terminals** you can find at a spawn point, check the spawn list.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-017.png
+  - |-
+    ## Terminals
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-018.png
+  - |-
+    Terminals are your second best friend. They let you do all sorts of things, like change your class or spawn an aircraft or ground vehicle.
+
+    You can find them at most bases, and at the warpgate. They're marked on the map with a few different icons, depending on what they are.
+
+    Terminals can be destroyed by enemies, hacked by infiltrators, and repaired by friendly engineers.
+
+    There are
+    - Infantry Equipment Terminals, found at all bases in spawn rooms, sometimes scattered around bases, on the sides of deployed **Sunderers**, and at player-made construction bases.
+    - Support Vehicle Spawn Terminals, found at many bases. These only spawn Sunderers, Harassers, Flashes, Javelins, Lightnings, and ANTs.
+    - Heavy Vehicle Spawn Terminals, found mostly at large bases. These spawn the above support vehicles, but also MBTs like the Magrider, Prowler, and Vanguard
+    - Aircraft Terminals, found at many bases. These spawn ESFs, Valkyries, Liberators, and Galaxies.
+    - Bastion Fleet Carrier Terminals, found at the warpgate. These spawn Bastion Fleet Carriers.
+    - Colossus Terminals, found at the warpgate and tech plants. These spawn massive Colossus tanks only.
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-019.png
+  - |-
+    # Sunderers
+  - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-020.png
+  - |-
+    If you found one of those "weird rectangles", we actually call that a Sunderer (or a Bus)! They're one of the most common vehicles on Auraxis, and can deploy as a spawn point for other players.
+
+    These bad boys are the lifeblood of most attacks on enemy bases, keep them alive, and you'll keep certs :cert~1: flowing.
+
+    Or, destroy enemy ones to cripple an attack! 
+
+    They also come with two gun slots, and can be equipped with multiple utility modules, such as shields, cloaks, vehicle ammo dispensers, vehicle repair bubbles, and more. Some soldiers like to drive them around like they're tanks or as support vehicles.
+  - |-
+    # Classes
+
+    Before we get carried away... let's talk about classes.
+
+    PlanetSide 2 has 6 infantry classes, all with their own unique abilities.

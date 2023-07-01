@@ -24,6 +24,7 @@ type UsefulGuide = {
   content: string;
   comments?: string[];
   reset?: boolean;
+  start_guide?: boolean;
 };
 
 let { state, messageID } = await getState<State>(
@@ -31,9 +32,16 @@ let { state, messageID } = await getState<State>(
   process.env.GUIDE_STATE || ""
 );
 
+let { state: startGuideState, messageID: startGuideMessageID } =
+  await getState<State>(stateChannelID, process.env.START_GUIDE_STATE || "");
+
 // Setup defaults...
 state = {
   ...state,
+};
+
+startGuideState = {
+  ...startGuideState,
 };
 
 const messageFiles = process.argv[2]
@@ -141,29 +149,32 @@ try {
     const fileContents = await file.text();
     const data: UsefulGuide = parseYAML(fileContents);
 
+    const localState = data.start_guide ? startGuideState : state;
+
     if (data.reset) {
       console.info(`Resetting ${messageFile} state...`);
-      state[key] = { m: "" };
+      localState[key] = { m: "" };
     }
 
     console.info(`Processing ${messageFile}...`);
 
-    state[key] = state[key] || { m: "" };
+    localState[key] = localState[key] || { m: "" };
 
-    if (state[key].m) {
-      await syncExistingPost(data.content, state[key].m);
+    if (localState[key].m) {
+      await syncExistingPost(data.content, localState[key].m);
     } else {
-      state[key].m = await createNewPost(data);
+      localState[key].m = await createNewPost(data);
     }
 
     if (data.comments !== undefined) {
-      state[key].c = await syncComments(
+      localState[key].c = await syncComments(
         data as any,
-        state[key].m,
-        state[key].c || []
+        localState[key].m,
+        localState[key].c || []
       );
     }
   }
 } finally {
   await writeState(stateChannelID, messageID, state);
+  await writeState(stateChannelID, messageID, startGuideState);
 }

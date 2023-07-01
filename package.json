@@ -18,15 +18,15 @@
   "homepage": "https://github.com/genudine/ps2-discord#readme",
   "dependencies": {
     "@types/yaml": "^1.9.7",
-    "dotenv": "^16.0.3",
-    "glob": "^10.2.5",
+    "dotenv": "^16.3.1",
+    "glob": "^10.3.1",
     "node-fetch": "^3.3.1",
-    "yaml": "^2.2.2"
+    "yaml": "^2.3.1"
   },
   "devDependencies": {
-    "bun-types": "^0.5.0"
+    "bun-types": "^0.6.12"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.1.6"
   }
 }
