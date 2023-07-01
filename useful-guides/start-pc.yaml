@@ -1,5 +1,5 @@
-start_guide: true
 title: "[PC] New Player? Start Here! (WIP)"
+skip: true
 content: |-
   > *This guide is a work-in-progress. Some stuff may be missing, worded incorrectly, or outright wrong. It can currently guide you through the initial steps, but doesn't cover everything in depth, yet.*
 
@@ -147,7 +147,7 @@ comments:
     You can double click any that you'd like, or pick it along the list of spawn locations on the top left.
   - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-016.png
   - |-
-    To know what sorts of "amenities" or **terminals** you can find at a spawn point, check the spawn list.
+    To know what sorts of "amenities" or **terminals** you can find at a spawn point, check the spawn list. These locations are also available for you to spawn at.
   - https://cdn.statically.io/gh/planetside-community/discord-messages/master/useful-guides/images/start-pc-017.png
   - |-
     ## Terminals
@@ -184,3 +184,14 @@ comments:
     Before we get carried away... let's talk about classes.
 
     PlanetSide 2 has 6 infantry classes, all with their own unique abilities.
+
+    - **Infiltrator** - The stealthy sniper class. They can cloak, hack terminals and turrets, and use sniper rifles.
+    - **Light Assault** - The jetpack class. They can use jetpacks to get to hard to reach places or move really fast, and use carbines.
+    - **Combat Medic** - The healer class. They can heal and revive allies, and use assault rifles.
+    - **Engineer** - The support class. They can repair vehicles and MAXes, deploy ammo packs, turrets, and temporary walls. This class uses carbines.
+    - **Heavy Assault** - The anti-vehicle class. They can use rocket launchers and LMGs, and get a cool over-shield.
+    - **MAX** - The heavy mech suit class. They can use two weapons at once, and have a lot of health, but can't be healed by medics. Each faction has its own MAX abilities.
+
+    We have a guide on how to build out each class: https://discord.com/channels/251073753759481856/1121293870781706261
+
+    *wip from this point*

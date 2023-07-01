@@ -1,52 +1,49 @@
 import { glob } from "glob";
 import { getState, writeState } from "./utils/state";
-import { resolve, sleep } from "bun";
+import { sleep } from "bun";
 import { parse as parseYAML } from "yaml";
 import { DiscordMessage, discordFetch } from "./utils/discord";
-
-const stateChannelID = process.env.STATE_CHANNEL_ID;
-if (!stateChannelID) {
-  throw new Error("STATE_CHANNEL_ID is not set");
-}
-
-const guideChannelID = process.env.GUIDE_CHANNEL_ID;
-if (!guideChannelID) {
-  throw new Error("GUIDE_CHANNEL_ID is not set");
-}
+import { guideChannelID, shouldSkip, usefulGuidesState } from "./utils/config";
 
 type State = {
-  // {(m)essage ID, (c)omment IDs}
-  [messageFile: string]: { m: string; c?: string[] };
+  [messageFile: string]: { thread: string; comments?: string[] };
 };
 
 type UsefulGuide = {
   title: string;
   content: string;
   comments?: string[];
-  reset?: boolean;
-  start_guide?: boolean;
+  skip?: boolean;
 };
 
-let { state, messageID } = await getState<State>(
-  stateChannelID,
-  process.env.GUIDE_STATE || ""
-);
-
-let { state: startGuideState, messageID: startGuideMessageID } =
-  await getState<State>(stateChannelID, process.env.START_GUIDE_STATE || "");
+let state = await getState<State>(usefulGuidesState);
 
 // Setup defaults...
 state = {
   ...state,
 };
 
-startGuideState = {
-  ...startGuideState,
-};
-
 const messageFiles = process.argv[2]
   ? [process.argv[2]]
   : await glob("useful-guides/**/*.yaml");
+
+const syncTitle = async (title: string, messageID: string) => {
+  const response: { name: string } = await discordFetch(
+    `/channels/${messageID}`
+  );
+
+  if (response.name !== title) {
+    console.log(`-- Updating title from "${response.name}" to "${title}"`);
+    await discordFetch(`/channels/${messageID}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        name: title,
+      }),
+    });
+
+    await sleep(2000);
+  }
+};
 
 const syncExistingPost = async (
   content: string,
@@ -73,7 +70,6 @@ const syncExistingPost = async (
       }),
     });
   }
-
   await sleep(2000);
 };
 
@@ -149,32 +145,30 @@ try {
     const fileContents = await file.text();
     const data: UsefulGuide = parseYAML(fileContents);
 
-    const localState = data.start_guide ? startGuideState : state;
-
-    if (data.reset) {
-      console.info(`Resetting ${messageFile} state...`);
-      localState[key] = { m: "" };
+    if (shouldSkip(data.skip)) {
+      console.info(`Skipping ${messageFile}...`);
+      continue;
     }
 
     console.info(`Processing ${messageFile}...`);
 
-    localState[key] = localState[key] || { m: "" };
+    state[key] = state[key] || { thread: "" };
 
-    if (localState[key].m) {
-      await syncExistingPost(data.content, localState[key].m);
+    if (state[key].thread !== "") {
+      await syncExistingPost(data.content, state[key].thread);
+      await syncTitle(data.title, state[key].thread);
     } else {
-      localState[key].m = await createNewPost(data);
+      state[key].thread = await createNewPost(data);
     }
 
     if (data.comments !== undefined) {
-      localState[key].c = await syncComments(
+      state[key].comments = await syncComments(
         data as any,
-        localState[key].m,
-        localState[key].c || []
+        state[key].thread,
+        state[key].comments || []
       );
     }
   }
 } finally {
-  await writeState(stateChannelID, messageID, state);
-  await writeState(stateChannelID, messageID, startGuideState);
+  await writeState(usefulGuidesState, state);
 }

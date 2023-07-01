@@ -3,6 +3,7 @@ import { getState, writeState } from "./utils/state";
 import { DiscordMessage, discordFetch } from "./utils/discord";
 import { sleep } from "bun";
 import { glob } from "glob";
+import { serviceMessageChannel, serviceMessagesState } from "./utils/config";
 
 const stateChannelID = process.env.STATE_CHANNEL_ID;
 if (!stateChannelID) {
@@ -10,8 +11,7 @@ if (!stateChannelID) {
 }
 
 type State = {
-  // (m)essages: { ...: { (c)hannelID, (k)nownMessageIDs } }
-  m: { [messageFile: string]: { c: string; k: { i: string }[] } };
+  [messageFile: string]: { channel: string; messages: string[] };
 };
 
 type ServiceMessage = { text: string; pin?: boolean };
@@ -21,14 +21,10 @@ type ServiceMessageFile = {
   messages: ServiceMessage[];
 };
 
-let { state, messageID } = await getState<State>(
-  stateChannelID,
-  process.env.SVCMSG_STATE || ""
-);
+let state = await getState<State>(serviceMessagesState);
 
 // Setup defaults...
 state = {
-  m: {},
   ...state,
 };
 
@@ -44,25 +40,27 @@ try {
     const fileContents = await file.text();
     const data: ServiceMessageFile = parseYAML(fileContents);
 
+    data.channelID = serviceMessageChannel(data.channelID);
+
     console.info(`=== PROCESSING ${messageFile} ===`);
 
-    state.m[key] = state.m[key] || { c: data.channelID, k: [] };
+    state[key] = state[key] || { channel: data.channelID, messages: [] };
 
-    if (state.m[key].c !== data.channelID) {
+    if (state[key].channel !== data.channelID) {
       console.info(`=> CHANNEL CHANGED, RESETTING STATE`);
       console.info(
         "I don't clean up old messages, so you'll have to do that manually."
       );
-      state.m[key] = { c: data.channelID, k: [] };
+      state[key] = { channel: data.channelID, messages: [] };
     }
 
-    let knownMessageIDs = state.m[key].k;
+    let knownMessageIDs = state[key].messages;
 
     for (const [idx, message] of data.messages.entries()) {
       await sleep(2000);
 
-      if (knownMessageIDs[idx]?.i) {
-        const messageID = knownMessageIDs[idx].i;
+      if (knownMessageIDs[idx]) {
+        const messageID = knownMessageIDs[idx];
         // Pull current message
         const response: DiscordMessage = await discordFetch(
           `/channels/${data.channelID}/messages/${messageID}`
@@ -97,9 +95,9 @@ try {
         }
       );
 
-      knownMessageIDs[idx] = { i: response.id };
+      knownMessageIDs[idx] = response.id;
     }
   }
 } finally {
-  await writeState(stateChannelID, messageID, state);
+  await writeState(serviceMessagesState, state);
 }
