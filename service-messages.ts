@@ -3,12 +3,11 @@ import { getState, writeState } from "./utils/state";
 import { DiscordMessage, discordFetch } from "./utils/discord";
 import { sleep } from "bun";
 import { glob } from "glob";
-import { serviceMessageChannel, serviceMessagesState } from "./utils/config";
-
-const stateChannelID = process.env.STATE_CHANNEL_ID;
-if (!stateChannelID) {
-  throw new Error("STATE_CHANNEL_ID is not set");
-}
+import {
+  environment,
+  serviceMessageChannel,
+  serviceMessagesState,
+} from "./utils/config";
 
 type State = {
   [messageFile: string]: { channel: string; messages: string[] };
@@ -17,7 +16,10 @@ type State = {
 type ServiceMessage = { text: string; pin?: boolean };
 
 type ServiceMessageFile = {
-  channelID: string;
+  channel: {
+    production: string;
+    staging: string;
+  };
   messages: ServiceMessage[];
 };
 
@@ -40,18 +42,18 @@ try {
     const fileContents = await file.text();
     const data: ServiceMessageFile = parseYAML(fileContents);
 
-    data.channelID = serviceMessageChannel(data.channelID);
+    const channelID = data.channel[environment];
 
     console.info(`=== PROCESSING ${messageFile} ===`);
 
-    state[key] = state[key] || { channel: data.channelID, messages: [] };
+    state[key] = state[key] || { channel: channelID, messages: [] };
 
-    if (state[key].channel !== data.channelID) {
+    if (state[key].channel !== channelID) {
       console.info(`=> CHANNEL CHANGED, RESETTING STATE`);
       console.info(
         "I don't clean up old messages, so you'll have to do that manually."
       );
-      state[key] = { channel: data.channelID, messages: [] };
+      state[key] = { channel: channelID, messages: [] };
     }
 
     let knownMessageIDs = state[key].messages;
@@ -63,7 +65,7 @@ try {
         const messageID = knownMessageIDs[idx];
         // Pull current message
         const response: DiscordMessage = await discordFetch(
-          `/channels/${data.channelID}/messages/${messageID}`
+          `/channels/${channelID}/messages/${messageID}`
         );
 
         if (response.content === message.text) {
@@ -72,21 +74,18 @@ try {
         }
 
         console.info(`=> UPDATING MESSAGE ${idx + 1}`);
-        await discordFetch(
-          `/channels/${data.channelID}/messages/${messageID}`,
-          {
-            method: "PATCH",
-            body: JSON.stringify({
-              content: message.text,
-            }),
-          }
-        );
+        await discordFetch(`/channels/${channelID}/messages/${messageID}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            content: message.text,
+          }),
+        });
         continue;
       }
 
       console.info(`=> SENDING MESSAGE ${idx + 1}`);
       const response: DiscordMessage = await discordFetch(
-        `/channels/${data.channelID}/messages`,
+        `/channels/${channelID}/messages`,
         {
           method: "POST",
           body: JSON.stringify({

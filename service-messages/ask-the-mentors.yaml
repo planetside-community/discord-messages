@@ -1,4 +1,6 @@
-channelID: "415955388622569492"
+channel:
+  production: "415955388622569492"
+  staging: "1124855003186733126"
 messages:
   - text: |-
       Welcome to <#415955388622569492>! This is a *strictly moderated* channel for players to seek advice from this server's verified mentor & advisor roles: <@&251831780254941184>, <@&295688578611281921>, <@&294503132313026563>, <@&1111417317893623932>, <@&849009612811141130>, and <@&516357013622751244>. If you are not here to seek advice, please allow the tagged mentors to handle questions in this channel and refrain from answering them yourself. Memes, advice from non-mentors, and other messages that do not follow this guideline will be removed and may result in revocation of access to this channel. This includes questions answered via side-pinging from another channel. Note that mentors may take a little while to respond depending on when they're around.

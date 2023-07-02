@@ -1,4 +1,6 @@
-channelID: "647267515449344031"
+channel:
+  production: "647267515449344031"
+  staging: "1124854637510541332"
 messages:
   - text: |-
       This is a strictly moderated channel for reporting Planetside 2 bugs to Daybreak. 

@@ -21,6 +21,7 @@ jobs:
           bun install
       - run: |
           bun run useful-guides.ts
+          bun run service-messages.ts
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           ENVIRONMENT: staging
