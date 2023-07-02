@@ -10,7 +10,7 @@ on:
       - "state/**"
 
 jobs:
-  sync_staging:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,43 +19,41 @@ jobs:
           bun-version: latest
       - run: |
           bun install
-      - run: |
+
+      # STAGING
+      - name: "sync messages for staging"
+        run: |
           bun run useful-guides.ts
           bun run service-messages.ts
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           ENVIRONMENT: staging
-      - run: |
+      - name: staging state dump
+        run: |
           echo "======== service-messages:"
           cat state/staging/service-messages.json
           echo "======== useful-guides:"
           cat state/staging/useful-guides.json
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add state/staging
-          git diff --quiet && git diff --staged --quiet || git commit -m "[ci] sync staging state"
-          git push
 
-  sync_production:
-    runs-on: ubuntu-latest
-    needs: sync_staging
-    steps:
-      - uses: actions/checkout@v2
-      - uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
-      - run: |
-          bun install
-      - run: |
+      # PRODUCTION
+      - name: "sync messages for production"
+        run: |
           bun run useful-guides.ts
           bun run service-messages.ts
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           ENVIRONMENT: production
+      - name: production state dump
+        run: |
+          echo "======== service-messages:"
+          cat state/production/service-messages.json
+          echo "======== useful-guides:"
+          cat state/production/useful-guides.json
+
+      # COMMIT
       - run: |
           git config user.name github-actions
-          git config user.email
-          git add state/staging
-          git diff --quiet && git diff --staged --quiet || git commit -m "[ci] sync production state"
+          git config user.email github-actions@github.com
+          git add state
+          git diff --quiet && git diff --staged --quiet || git commit -m "[ci] sync state"
           git push
