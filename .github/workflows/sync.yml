@@ -1,5 +1,7 @@
 name: Sync Discord Messages
 
+permissions: write-all
+
 on:
   push:
     branches:
