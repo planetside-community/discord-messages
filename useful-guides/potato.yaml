@@ -1,6 +1,6 @@
 title: '"Potato" UserOptions.ini Settings (and why you need it)'
 content: |-
-  *Last updated: 17 Nov 2022*
+  **Last updated: 24 JUL 2023**
 
   Your PlanetSide 2 install directory contains a `UserOptions.ini` file for your settings. You can set values in there that aren't accessible from the UI in-game. 
 
@@ -9,6 +9,10 @@ content: |-
   You may also want to set the file to read-only to prevent the game from overwriting these options.
 
   ## Always save a backup copy of this file before making manual changes.
+
+  # Lowest Quality
+
+  *Best for infantry, low spec machines, and just maximum FPS.*
 
   ```ini
   [Rendering]
@@ -50,6 +54,55 @@ content: |-
 
   You may want to play with the texture settings (try both Low and Ultra to see which gives you better frames, depends on your machine). It also reduces your render distance to 200m, so you might want to adjust that back up for flying or vehicles.
 comments:
+  - |-
+    # Fast Ultra
+
+    *Best for air, vehicles, and high end PCs that want maximum FPS.* 
+    *Not strictly potato, but pretty and removes the FPS-lowering options.*
+
+    ```ini
+    [Rendering]
+    GraphicsQuality=3
+    TextureQuality=0
+    ShadowQuality=0
+    RenderDistance=6000.000000
+    Gamma=0.000000
+    MaximumFPS=250
+    UseLod0a=0
+    OverallQuality=-1
+    LightingQuality=2
+    FogShadowsEnable=0
+    EffectsQuality=1
+    TerrainQuality=1
+    FloraQuality=4
+    ModelQuality=3
+    ParticleLOD=0
+    MotionBlur=0
+    VerticalFOV=89
+    AO=1
+    Smoothing=0
+    BloomEnabled=0
+    VSync=0
+    ParticleDistanceScale=0.650000
+    UseAspectFOV=1
+    GpuPhysics=0
+    InfantryRenderDistance=800.000000
+    GroundVehicleRenderDistance=6000.000000
+    AirVehicleRenderDistance=6000.000000
+    UseGlobalRenderDistance=0
+    ColorBlindFilterType=0
+    ColorBlindFilterAmount=1.000000
+    ColorBlindFilterStrength=1.000000
+    UnderwaterGodRaysQuality=0
+    AAQuality=1
+    SSLRQuality=0
+    FSRQuality=-1
+    FSRSharpness=0.000000
+    DLSSQuality=-1
+    DLSSSharpness=0.000000
+    Tessellation=0
+    WaterQuality=0
+    ```
   - |-
     # Why do you need this?
 
